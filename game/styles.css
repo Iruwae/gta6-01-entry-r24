@@ -1,0 +1,72 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#1a0f1e;font-family:'Segoe UI',Arial,sans-serif}
+#app{position:fixed;inset:0}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block}
+#hud{position:absolute;inset:0;pointer-events:none;overflow:hidden;color:#fff}
+.pnl{position:absolute;background:rgba(12,10,18,.78);border:1px solid rgba(212,175,55,.65);border-radius:10px;padding:7px 10px;box-shadow:0 2px 10px rgba(0,0,0,.45)}
+.ttl{font-size:11px;letter-spacing:.14em;color:#f0c95c;font-weight:700}
+.big{font-size:17px;font-weight:800;color:#fff}
+.sub{font-size:11px;color:#cfc8de}
+.gold{color:#f0c95c}.grn{color:#4be38a}.red{color:#ff5d5d}.teal{color:#4be0d2}
+#mission{top:12px;left:12px;min-width:280px;max-width:340px}
+#mission .obj{font-size:12px;margin-top:3px;color:#e8e2f2}
+#mission .nxt{font-size:11px;color:#9fd8c9;margin-top:2px}
+#status{top:12px;right:12px;text-align:right;min-width:210px}
+#money{font-size:22px;font-weight:800;color:#4be38a;text-shadow:0 1px 2px #000}
+#stars{font-size:17px;letter-spacing:2px;margin-top:2px}
+#dispatch{top:12px;left:50%;transform:translateX(-50%);min-width:300px}
+#dispatch .row{display:flex;justify-content:space-between;font-size:12px;padding:2px 0}
+#dispatch .chip{font-size:10px;background:#2a2438;border:1px solid #d4af37;border-radius:4px;padding:0 5px;color:#ffd76a}
+#weapons{top:170px;right:12px;width:172px}
+#weapons .w{display:flex;justify-content:space-between;font-size:12px;padding:3px 4px;border-radius:5px;color:#d8d2e6}
+#weapons .w.sel{background:rgba(212,175,55,.28);color:#fff;font-weight:700}
+#weapons .w .a{color:#9fd8c9}
+#crew{top:330px;right:12px;width:172px}
+#crew .c{font-size:11px;padding:4px 5px;border:1px solid rgba(212,175,55,.4);border-radius:6px;margin-top:4px;background:rgba(20,16,30,.6)}
+#crew .c b{color:#ffd76a}
+#radio{bottom:118px;right:12px;text-align:right;font-size:12px}
+#vehicle{bottom:12px;right:12px;text-align:right;min-width:190px}
+#speed{font-size:34px;font-weight:800;line-height:1}
+#speed small{font-size:11px;color:#cfc8de}
+.bar{height:7px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden;margin-top:3px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#4be38a,#b8f5a0)}
+.bar.h i{background:linear-gradient(90deg,#ff5d5d,#ffb36b)}
+.bar.a i{background:linear-gradient(90deg,#4ba3e3,#8fd0ff)}
+#minimapW{position:absolute;bottom:12px;left:12px}
+#minimap{width:210px;height:210px;border-radius:50%;border:3px solid rgba(212,175,55,.8);display:block;background:#101826}
+#objDist{font-size:11px;color:#ffd76a;margin-top:4px;text-align:center}
+#vitals{position:absolute;left:232px;bottom:16px;width:150px}
+#dialogue{bottom:12px;left:50%;transform:translateX(-50%);width:640px;max-width:72%;display:flex;gap:10px;align-items:flex-start}
+#dialogue .por{width:52px;height:52px;border-radius:50%;flex:none;border:2px solid #d4af37;background:radial-gradient(circle at 35% 35%,#f7c98a,#b06a3a 70%);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#3a1c08}
+#dialogue .ln{font-size:14px;line-height:1.35}
+#dialogue .who{color:#ffd76a;font-weight:700;font-size:13px}
+#hint{position:absolute;bottom:150px;left:50%;transform:translateX(-50%);font-size:12px;background:rgba(12,10,18,.7);padding:5px 12px;border-radius:14px;border:1px solid rgba(212,175,55,.4)}
+#notices{top:120px;left:12px;width:300px}
+#notices .n{font-size:12px;background:rgba(12,10,18,.75);border-left:3px solid #d4af37;padding:5px 8px;border-radius:5px;margin-top:4px}
+#banner{position:absolute;top:19%;left:50%;transform:translate(-50%,-50%);text-align:center;display:none}
+#banner .t{font-size:44px;font-weight:900;letter-spacing:.06em;color:#ffd76a;text-shadow:0 3px 12px #000}
+#banner .s{font-size:16px;color:#fff;text-shadow:0 1px 4px #000}
+#race{top:52px;left:50%;transform:translateX(-50%);text-align:center}
+#race .t{font-size:13px;font-weight:800;letter-spacing:.1em}
+#race .g{font-size:12px;color:#9fd8c9}
+#nametag{position:absolute;transform:translate(-50%,-100%);background:rgba(12,10,18,.85);border:1px solid rgba(212,175,55,.7);border-radius:12px;padding:2px 10px;font-size:12px;font-weight:700;white-space:nowrap}
+#title{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(20,8,24,.25),rgba(20,8,24,.55));pointer-events:auto}
+#title h1{font-size:84px;font-weight:900;letter-spacing:.04em;background:linear-gradient(180deg,#ffe9a3,#f0a13c 55%,#e2543e);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 4px 24px rgba(0,0,0,.35)}
+#title .tag{font-size:16px;color:#ffe9c9;margin-top:2px;text-shadow:0 1px 6px #000}
+#title .menu{margin-top:26px;width:320px}
+#title .mi{pointer-events:auto;cursor:pointer;text-align:center;font-size:17px;font-weight:700;padding:9px;border-radius:8px;border:1px solid rgba(212,175,55,.6);background:rgba(12,10,18,.72);margin-top:8px}
+#title .mi:hover{background:rgba(212,175,55,.35)}
+#title .mi small{display:block;font-size:11px;color:#cfc8de;font-weight:400}
+#title .ctl{margin-top:22px;font-size:12px;color:#e8e2f2;text-shadow:0 1px 4px #000}
+#pause{position:absolute;inset:0;background:rgba(10,8,16,.82);display:flex;pointer-events:auto}
+#pause .l{flex:1;padding:26px}
+#pause .r{width:340px;padding:26px;border-left:1px solid rgba(212,175,55,.4)}
+#pause h2{font-size:26px;color:#ffd76a;letter-spacing:.05em}
+#pause .stat{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+#pause .btn{cursor:pointer;text-align:center;font-size:15px;font-weight:700;padding:9px;border-radius:8px;border:1px solid rgba(212,175,55,.6);background:rgba(20,16,30,.8);margin-top:8px}
+#pause .btn:hover{background:rgba(212,175,55,.3)}
+#pause .btn.sel{background:rgba(212,175,55,.4)}
+#mapcv{width:100%;height:420px;background:#0e1622;border:1px solid rgba(212,175,55,.5);border-radius:8px}
+.hidden{display:none!important}
+#hud.mode-title .pnl,#hud.mode-pause .pnl{display:none!important}
+#hud.mode-title #minimapW,#hud.mode-title #vitals,#hud.mode-title #tags,#hud.mode-title #hint,#hud.mode-title #banner,#hud.mode-pause #minimapW,#hud.mode-pause #vitals,#hud.mode-pause #tags,#hud.mode-pause #hint,#hud.mode-pause #banner{display:none!important}
