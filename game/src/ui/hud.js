@@ -53,6 +53,7 @@ export function createHud(game){
    '<div class="c"><b>['+c.key.replace('Key','')+'] '+c.name+'</b> · '+c.role+'<br><span class="sub">'+c.desc+'</span></div>').join('');
   const stn=game.radio.current;
   if(p.vehicle){vehicle.classList.remove('hidden');
+   radio.classList.add('hidden');
    const kmh=Math.round(p.vehicle.speed*3.6);
    vehicle.innerHTML='<div class="sub">'+(game.fleet?game.fleetName(p.vehicle):'')+'</div>'+
     '<div id="speed">'+kmh+'<small> KM/H</small></div>'+
@@ -60,6 +61,7 @@ export function createHud(game){
     '<div class="sub" style="margin-top:4px">♪ '+stn.name+' — '+stn.song+'</div>'}
   else{vehicle.classList.add('hidden');
    radio.classList.remove('hidden');
+   radio.style.bottom='12px';
    radio.innerHTML='<div class="sub">♪ '+stn.name+'</div><div>'+stn.song+'</div>'}
   const tgt=game.missions.target()||(game.activities.fare?{x:game.activities.fare.x,z:game.activities.fare.z}:null);
   if(tgt){const dd=Math.round(Math.hypot(tgt.x-p.position.x,tgt.z-p.position.z));

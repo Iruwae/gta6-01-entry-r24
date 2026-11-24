@@ -24,16 +24,23 @@ export function createSky(game){
   const a=game.rng.range(0,Math.PI*2),r=game.rng.range(900,2600);
   s.position.set(Math.cos(a)*r,game.rng.range(330,760),Math.sin(a)*r);
   s.scale.set(game.rng.range(420,900),game.rng.range(90,190),1);s.userData.v=game.rng.range(1,3);clouds.push(s);scene.add(s)}
+ const fadeTex=(()=>{const cv=document.createElement('canvas');cv.width=512;cv.height=288;const c=cv.getContext('2d');
+  const im=c.createImageData(512,288);
+  for(let y=0;y<288;y++)for(let x=0;x<512;x++){
+   const tf=Math.min(1,y/72),sf=Math.min(1,Math.min(x,511-x)/52);
+   const a=Math.min(tf,sf)*255,i=(y*512+x)*4;
+   im.data[i]=a;im.data[i+1]=a;im.data[i+2]=a;im.data[i+3]=255}
+  c.putImageData(im,0,0);return new THREE.CanvasTexture(cv)})();
  const sun=new THREE.DirectionalLight(0xffb36b,1.9);
  sun.position.set(180,140,-220);sun.castShadow=true;
  sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-95;sun.shadow.camera.right=95;
  sun.shadow.camera.top=95;sun.shadow.camera.bottom=-95;sun.shadow.camera.near=10;sun.shadow.camera.far=700;
  sun.shadow.bias=-0.0004;scene.add(sun);scene.add(sun.target);
- const hemi=new THREE.HemisphereLight(0x8a7bd8,0x4a2f28,0.7);scene.add(hemi);
+ const hemi=new THREE.HemisphereLight(0x9a7a9e,0x4a2f28,0.6);scene.add(hemi);
  scene.fog=new THREE.Fog(0xe89a6a,260,2400);
  const loader=new THREE.TextureLoader();
  loader.load('tex4-sky.jpg',t=>{t.colorSpace=THREE.SRGBColorSpace;
-  const m=new THREE.Mesh(new THREE.PlaneGeometry(5200,1500),new THREE.MeshBasicMaterial({map:t,fog:false,depthWrite:false}));
+  const m=new THREE.Mesh(new THREE.PlaneGeometry(6400,3600),new THREE.MeshBasicMaterial({map:t,fog:false,depthWrite:false,transparent:true,alphaMap:fadeTex}));
   m.position.set(2400,420,-60);m.rotation.y=-Math.PI/2;m.renderOrder=-9;scene.add(m);
   const m2=m.clone();m2.position.set(-2400,420,60);m2.rotation.y=Math.PI/2;scene.add(m2);
  },undefined,()=>{});

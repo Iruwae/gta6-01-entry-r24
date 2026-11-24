@@ -37,8 +37,8 @@ export function createCityBuilder(game){
  loader.load('tex4-shop.jpg',t=>{t.colorSpace=THREE.SRGBColorSpace;
   shopWinMat.map=t;shopWinMat.emissiveMap=t;shopWinMat.emissive=new THREE.Color(0xffffff);shopWinMat.emissiveIntensity=0.3;shopWinMat.needsUpdate=true},undefined,()=>{});
  const gates=[];const heroSpots=[];let wheel=null,seaMat=null;
- const M={asphalt:new THREE.MeshLambertMaterial({map:grainTex('#1e1e24',['#33333a','#1e1e24'],5200)}),
-  pave:new THREE.MeshLambertMaterial({map:grainTex('#8a7f74',['#96897c','#7a6f64'],2600)}),
+ const M={asphalt:new THREE.MeshLambertMaterial({map:grainTex('#17171d',['#26262e','#17171d'],5200)}),
+  pave:new THREE.MeshLambertMaterial({map:grainTex('#6e6258',['#7d7066','#5d5148'],2600)}),
   sand:new THREE.MeshLambertMaterial({map:grainTex('#e8d29a',['#d8c28a','#f2e2b2'],4200)}),
   prom:new THREE.MeshLambertMaterial({map:grainTex('#b09a86',['#a08a76','#c0aa96'],3600)}),
   sea:new THREE.MeshLambertMaterial({color:0x2fa8a0,transparent:true,opacity:0.94}),

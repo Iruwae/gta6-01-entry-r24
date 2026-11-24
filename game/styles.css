@@ -8,7 +8,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a0f1e;font-family:
 .big{font-size:17px;font-weight:800;color:#fff}
 .sub{font-size:11px;color:#cfc8de}
 .gold{color:#f0c95c}.grn{color:#4be38a}.red{color:#ff5d5d}.teal{color:#4be0d2}
-#mission{top:12px;left:12px;min-width:280px;max-width:340px}
+#mission{top:16px;left:12px;min-width:280px;max-width:340px}
 #mission .obj{font-size:12px;margin-top:3px;color:#e8e2f2}
 #mission .nxt{font-size:11px;color:#9fd8c9;margin-top:2px}
 #status{top:12px;right:12px;text-align:right;min-width:210px}
@@ -41,7 +41,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a0f1e;font-family:
 #dialogue .ln{font-size:14px;line-height:1.35}
 #dialogue .who{color:#ffd76a;font-weight:700;font-size:13px}
 #hint{position:absolute;bottom:150px;left:50%;transform:translateX(-50%);font-size:12px;background:rgba(12,10,18,.7);padding:5px 12px;border-radius:14px;border:1px solid rgba(212,175,55,.4)}
-#notices{top:120px;left:12px;width:300px}
+#notices{position:absolute;top:120px;left:12px;width:300px}
 #notices .n{font-size:12px;background:rgba(12,10,18,.75);border-left:3px solid #d4af37;padding:5px 8px;border-radius:5px;margin-top:4px}
 #banner{position:absolute;top:19%;left:50%;transform:translate(-50%,-50%);text-align:center;display:none}
 #banner .t{font-size:44px;font-weight:900;letter-spacing:.06em;color:#ffd76a;text-shadow:0 3px 12px #000}
@@ -69,4 +69,4 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a0f1e;font-family:
 #mapcv{width:100%;height:420px;background:#0e1622;border:1px solid rgba(212,175,55,.5);border-radius:8px}
 .hidden{display:none!important}
 #hud.mode-title .pnl,#hud.mode-pause .pnl{display:none!important}
-#hud.mode-title #minimapW,#hud.mode-title #vitals,#hud.mode-title #tags,#hud.mode-title #hint,#hud.mode-title #banner,#hud.mode-pause #minimapW,#hud.mode-pause #vitals,#hud.mode-pause #tags,#hud.mode-pause #hint,#hud.mode-pause #banner{display:none!important}
+#hud.mode-title #minimapW,#hud.mode-title #vitals,#hud.mode-title #tags,#hud.mode-title #hint,#hud.mode-title #banner,#hud.mode-title #notices,#hud.mode-pause #minimapW,#hud.mode-pause #vitals,#hud.mode-pause #tags,#hud.mode-pause #hint,#hud.mode-pause #banner,#hud.mode-pause #notices{display:none!important}
